@@ -60,3 +60,67 @@ footer {
   color: var(--text-color);
   text-align: center;
 }
+form {
+  max-width: 35rem;
+}
+
+form > label {
+  display: block;
+  margin-top: var(--spacing);
+  margin-bottom: 0.25rem;
+}
+
+input[type="text"],
+input[type="email"],
+select,
+textarea {
+  display: block;
+  width: 100%;
+  padding: 0.5rem;
+  border: 0.1rem solid #777777;
+  border-radius: 0.25rem;
+  font: inherit;
+}
+
+textarea {
+  min-height: 8rem;
+  resize: vertical;
+}
+fieldset {
+  margin-top: var(--spacing);
+  padding: var(--spacing);
+  border: 0.1rem solid #777777;
+  border-radius: 0.25rem;
+}
+
+legend {
+  font-weight: bold;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+  margin-right: 0.25rem;
+}
+
+button {
+  margin-top: var(--spacing);
+  padding: 0.6rem 1rem;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 0.25rem;
+  font: inherit;
+  cursor: pointer;
+}
+
+button:hover {
+  text-decoration: underline;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+  outline: 0.2rem solid var(--primary-color);
+  outline-offset: 0.15rem;
+}
