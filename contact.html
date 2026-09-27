@@ -1,49 +1,89 @@
-<main>
-  <h2>Contact Me</h2>
+<!DOCTYPE html>
+<html lang="en">
 
-  <form>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact - Binbin Yang</title>
 
-    <label for="name">Name</label>
-    <input type="text" id="name" name="name" required>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
 
-    <label for="email">Email</label>
-    <input type="email" id="email" name="email" required>
+<body>
 
-    <label for="reason">Reason for Contact</label>
-    <select id="reason" name="reason">
-      <option value="question">Question</option>
-      <option value="feedback">Feedback</option>
-      <option value="other">Other</option>
-      <option value="I don't know">I don't know</option>
-    </select>
+  <header>
+    <h1>Contact Binbin Yang</h1>
 
-    <fieldset>
-      <legend>Preferred Contact Method</legend>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-      <input type="radio"
-             id="contact-email"
-             name="contact-method"
-             value="email">
-      <label for="contact-email">Email</label>
+  <main>
 
-      <input type="radio"
-             id="contact-phone"
-             name="contact-method"
-             value="phone">
-      <label for="contact-phone">Phone</label>
-    </fieldset>
+    <h2>Contact Me</h2>
 
-    <input type="checkbox"
-           id="reply"
-           name="reply">
-    <label for="reply">I would like a reply</label>
+    <form>
 
-    <label for="message">Message</label>
-    <textarea id="message"
-              name="message"
-              required></textarea>
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" required>
 
-    <button type="submit">Send</button>
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required>
 
-  </form>
-</main>
+      <label for="reason">Reason for Contact</label>
+      <select id="reason" name="reason">
+        <option value="question">Question</option>
+        <option value="feedback">Feedback</option>
+        <option value="other">Other</option>
+        <option value="unknown">I don't know</option>
+      </select>
+
+      <fieldset>
+        <legend>Preferred Contact Method</legend>
+
+        <input
+          type="radio"
+          id="contact-email"
+          name="contact-method"
+          value="email">
+        <label for="contact-email">Email</label>
+
+        <input
+          type="radio"
+          id="contact-phone"
+          name="contact-method"
+          value="phone">
+        <label for="contact-phone">Phone</label>
+      </fieldset>
+
+      <input
+        type="checkbox"
+        id="reply"
+        name="reply">
+      <label for="reply">I would like a reply</label>
+
+      <label for="message">Message</label>
+      <textarea
+        id="message"
+        name="message"
+        required></textarea>
+
+      <button type="submit">Send</button>
+
+    </form>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Binbin Yang</p>
+  </footer>
+
+</body>
+
+</html>
