@@ -14,6 +14,10 @@ A shared external CSS stylesheet was added to uniformly beautify all four pages.
 ### Styling Decision
 Originally, I was planning to choose a style similar to VS Code with a black background, but that would be not very good for the eyes. In the end, the blue and white style was chosen.
 
+## Lab 3
+Added mobile device support and implemented a card layout to ensure that the content can still be clearly read even at different screen widths.
+
 ## AI Use
 
 I asked ChatGPT to answer this question, and its answer is: -figure- is an independent block-level/semantic content that will terminate the <p> tag prematurely.
+
