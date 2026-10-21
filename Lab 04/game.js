@@ -195,3 +195,10 @@ function revealWord(word, guessedLetters) {
 function hasWon(word, guessedLetters) {
   return !revealWord(word, guessedLetters).includes("_");
 }
+/*
+Question 1: submitGuess adds the letter to guessedLetters before it changes lives. What would break if those two lines were swapped?
+No, because their updates are independent of each other.
+
+Question 2: Why does play.js call isValidGuess before normalizeGuess?
+First, check if the input is valid. If it is invalid, return immediately to avoid further errors.
+*/
