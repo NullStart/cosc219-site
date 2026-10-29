@@ -222,6 +222,10 @@ function openDistance(trails) {
    ---------------------------------------------------------------------- */
 
 function summaryLines(trails) {
+    return trails.map(trail => {
+      const status = trail.closed ? " (closed)" : "";
+      return `${trail.name} — ${trail.km} km, ${trail.rating}${status}`;
+    });
 }
 
 
