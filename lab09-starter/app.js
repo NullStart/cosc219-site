@@ -19,7 +19,8 @@ import { fetchTrail, delay } from "./api.js";
    ---------------------------------------------------------------------- */
 
 export async function getTrailName(id) {
-
+    const trail = await fetchTrail(id);
+    return trail.name;
 }
 
 
@@ -39,7 +40,8 @@ export async function getTrailName(id) {
    ---------------------------------------------------------------------- */
 
 export async function getTrailNames(ids) {
-
+    const promises = ids.map(id => getTrailName(id));
+    return await Promise.all(promises);
 }
 
 
@@ -56,7 +58,12 @@ export async function getTrailNames(ids) {
    ---------------------------------------------------------------------- */
 
 export async function getTrailSafe(id) {
-
+    try {
+        const trail = await fetchTrail(id);
+        return trail;
+    } catch {
+        return null;
+    }
 }
 
 
@@ -74,7 +81,21 @@ export async function getTrailSafe(id) {
    ---------------------------------------------------------------------- */
 
 export async function loadSome(ids) {
+    const promises = ids.map(id => getTrailName(id));
+    const results = await Promise.allSettled(promises);
 
+    const loaded = [];
+    let failed = 0;
+
+    for (const result of results) {
+        if (result.status === "fulfilled") {
+            loaded.push(result.value);
+        } else {
+            failed++;
+        }
+    }
+
+    return { loaded, failed };
 }
 
 
@@ -90,7 +111,11 @@ export async function loadSome(ids) {
    ---------------------------------------------------------------------- */
 
 export async function withTimeout(promise, ms) {
+    const timer = delay(ms).then(() => {
+        throw new Error("Timed out");
+    });
 
+    return await Promise.race([promise, timer]);
 }
 
 
@@ -111,5 +136,13 @@ export async function withTimeout(promise, ms) {
    ---------------------------------------------------------------------- */
 
 export function uiState({ loading, error, items }) {
-
+    if (loading) {
+        return "loading";
+    } else if (error) {
+        return "error";
+    } else if (!items || items.length === 0) {
+        return "empty";
+    } else {
+        return "loaded";
+    }
 }
